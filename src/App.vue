@@ -1,17 +1,28 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="appHeaderNav">
+    <div id="populateFirebase">
+      <PopulateFirebase/>
+    </div>
+    <!--<div id="headerNav">
+      <HeaderNav/>
+    </div>
+    <div id="app">
+      <HelloWorld/>
+    </div>-->
   </div>
 </template>
 
 <script>
+import HeaderNav from './components/HeaderNav.vue'
 import HelloWorld from './components/HelloWorld.vue'
+import PopulateFirebase from './components/PopulateFirebase'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    HeaderNav,
+    HelloWorld,
+    PopulateFirebase
   }
 }
 </script>
@@ -23,6 +34,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 60px
 }
 </style>
