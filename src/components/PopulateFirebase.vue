@@ -35,22 +35,21 @@ import {db} from '../firebase';
 export default {
   name: 'PopulateFirebase',
   props: {
-    msg: String
   },
   methods:{
-    add:function(){
+    add:function(){//this function adds all the info about a person to firebase
       this.$firebaseRefs.staff.push({profilePicture:this.$data.profilePicture,sex:this.$data.sex,firstName:this.$data.firstName,
       lastName:this.$data.lastName,age:this.$data.age,address:this.$data.address,phone:this.$data.phone,
       position:this.$data.position,hobby:this.$data.hobby,married:this.$data.married,plans:this.$data.plans});
     },
-    addPlan:function(){
+    addPlan:function(){ //this function adds a single plan in the plans array, to add it to firebase later
       this.$data.plans.push({name:this.$data.plan,fromT:this.$data.fromT,toT:this.$data.toT});
       this.$data.plan='';
       this.$data.fromT='';
     }
   },
   data() {
-    return {
+    return { //here are all the v-models for each person's individual information
       profilePicture:'',
       sex:'female',
       firstName:'',

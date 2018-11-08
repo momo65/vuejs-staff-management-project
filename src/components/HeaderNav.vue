@@ -9,15 +9,17 @@
         <ul class="navbar-nav nav">
           <li>
             <form class="form-inline" id="searchForm">
+              <!--pass the staff firebase elements to autocomplete-->
               <md-autocomplete class="searchPerson" v-model="selectedPerson" :md-options="staff">
                 <label>searchFor</label>
-                <template v-if="staff!=null" slot="md-autocomplete-item" slot-scope="{ item, term }">
-                  <span><img class="img-responsive" style="max-height:12px;max-width:12px;"
-                    /></span>
+          <!--item below refers to a single element from staff as an object & term might refer to the value term of autocomplete-->
+                <template v-if="staff!=null" slot="md-autocomplete-item" slot-scope="{ item, term }"
+                  v-click="personDetails(item['.key'])">
+                  <span><img class="img-responsive" style="max-height:36px;max-width:36px;"
+                    v-bind:src="item.profilePicture"/></span>
                   <md-highlight-text :md-term="term">{{ item.firstName+" "+item.lastName }}</md-highlight-text>
                 </template>
               </md-autocomplete>
-              <button type="submit" v-on:click="searchFor('',-1)"><i class="material-icons">search</i></button>
             </form>
           </li>
         </ul>
@@ -35,8 +37,8 @@ export default {
     msg: String
   },
   methods:{
-    searchFor:function(term,index){
-
+    personDetails:function(key){  // this function's supposed to send the firebase key of the selected person to the PersonDetail page
+      //$router.push('PersonDetail/'+key)
     }
   },
   data() {
@@ -68,20 +70,9 @@ export default {
 .headerNav{
   min-width:100%;
 }
-button{
-  float:left;
-}
 .searchPerson{
   background-color:white;
   width:100%;
-}
-form{
-}
-ul.navbar-nav{
-}
-a.navbar-brand{
-}
-div.navbar-header{
 }
 .nbBg{
   background-color: rgb(65,184,131);
