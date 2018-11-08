@@ -12,8 +12,10 @@
               <md-autocomplete class="searchPerson" v-model="selectedPerson" :md-options="staff">
                 <label>searchFor</label>
                 <template v-if="staff!=null" slot="md-autocomplete-item" slot-scope="{ item, term }">
-                  <md-highlight-text :md-term="term">{{ item }}</md-highlight-text>
-                  </template>
+                  <span><img class="img-responsive" style="max-height:12px;max-width:12px;"
+                    /></span>
+                  <md-highlight-text :md-term="term">{{ item.firstName+" "+item.lastName }}</md-highlight-text>
+                </template>
               </md-autocomplete>
               <button type="submit" v-on:click="searchFor('',-1)"><i class="material-icons">search</i></button>
             </form>

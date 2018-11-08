@@ -1,14 +1,14 @@
 <template>
   <div id="appHeaderNav">
-    <div id="populateFirebase">
+    <!--<div id="populateFirebase">
       <PopulateFirebase/>
-    </div>
-    <!--<div id="headerNav">
+    </div>-->
+    <div id="headerNav">
       <HeaderNav/>
     </div>
     <div id="app">
       <HelloWorld/>
-    </div>-->
+    </div>
   </div>
 </template>
 
