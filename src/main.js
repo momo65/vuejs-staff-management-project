@@ -7,7 +7,7 @@ import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 Vue.use(BootstrapVue)
-Vue.use(VueFire);
+Vue.use(VueFire)
 Vue.use(VueMaterial)
 
 Vue.config.productionTip = false

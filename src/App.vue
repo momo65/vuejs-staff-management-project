@@ -2,26 +2,26 @@
   <div id="appHeaderNav">
     <!--<div id="populateFirebase">
       <PopulateFirebase/>
-    </div>-->
+    </div>--><!--this is for populating the firebase with persons's data-->
     <div id="headerNav">
       <HeaderNav/>
     </div>
     <div id="app">
-      <HelloWorld/>
-    </div>
+      <Welcome></Welcome>
+    </div> <!--the welcome page-->
   </div>
 </template>
 
 <script>
 import HeaderNav from './components/HeaderNav.vue'
-import HelloWorld from './components/HelloWorld.vue'
 import PopulateFirebase from './components/PopulateFirebase'
+import Welcome from './components/Welcome'
 
 export default {
   name: 'app',
   components: {
     HeaderNav,
-    HelloWorld,
+    Welcome,
     PopulateFirebase
   }
 }
